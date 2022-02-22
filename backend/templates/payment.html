@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Booking Form HTML Template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <section class="">
+        <div class="wrap">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <p class="mb-0 phone"><span class="fa fa-phone"></span> <a href="#">+254701104832</a></p>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <div class="social-media">
+                            <p class="mb-0 d-flex">
+                                <a href="#" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                    Register
+                  </button></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <a href="#" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">
+                    Login
+                  </button></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">LOGO <span>HERE</span></a>
+                <form action="#" class="searchform order-sm-start order-lg-last">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control pl-3" placeholder="Search">
+                        <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                    </div>
+                </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active"><a href="{% url 'home' %} " class="nav-link">Home</a></li>
+                        <li class="nav-item "><a href="{% url 'prebooking' %} " class="nav-link">Pre-Booking</a></li>
+                        <li class="nav-item"><a href="{% url 'about' %} " class="nav-link">About us</a></li>
+                        <li class="nav-item"><a href="{% url 'contact' %} " class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class=" ">
+            <!-- For demo purpose -->
+            <div class="row mb-4">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-6"> Payment Method</h1>
+                </div>
+            </div>
+            <!-- End -->
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card ">
+                        <div class="card-header">
+                            <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                <!-- Credit card form tabs -->
+                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                    <li class="nav-item">
+                                        <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net Banking </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End -->
+                            <!-- Credit card form content -->
+                            <div class="tab-content">
+                                <!-- credit card info-->
+                                <div id="credit-card" class="tab-pane fade show active pt-3">
+                                    <form role="form" action="/payment-successful/">
+                                        <div class="form-group"> <label for="username">
+											<h6>Card Owner</h6>
+										</label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                        <div class="form-group"> <label for="cardNumber">
+											<h6>Card number</h6>
+										</label>
+                                            <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                                <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group"> <label><span class="hidden-xs">
+														<h6>Expiration Date</h6>
+													</span></label>
+                                                    <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+													<h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+												</label> <input type="text" required class="form-control"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer"> <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                    </form>
+                                    </div>
+                                </div>
+                                <!-- End -->
+                                <!-- Paypal info -->
+                                <div id="paypal" class="tab-pane fade pt-3">
+                                    <h6 class="pb-2">Select your paypal account type</h6>
+                                    <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
+                                    <p> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                                    <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                                </div>
+                                <!-- End -->
+                                <!-- bank transfer info -->
+                                <div id="net-banking" class="tab-pane fade pt-3">
+                                    <div class="form-group "> <label for="Select Your Bank">
+									<h6>Select your Bank</h6>
+								</label> <select class="form-control" id="ccmonth">
+									<option value="" selected disabled>--Please select your Bank--</option>
+									<option>Bank 1</option>
+									<option>Bank 2</option>
+									<option>Bank 3</option>
+									<option>Bank 4</option>
+									<option>Bank 5</option>
+									<option>Bank 6</option>
+									<option>Bank 7</option>
+									<option>Bank 8</option>
+									<option>Bank 9</option>
+									<option>Bank 10</option>
+								</select> </div>
+                                    <div class="form-group">
+                                        <p> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> </p>
+                                    </div>
+                                    <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                                </div>
+                                <!-- End -->
+                                <!-- End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Registeration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="m-4 float-center">
+                                <div class=" gap-4">
+                                    <button type="button" class="mx-2 mt-2 btn btn-warning">Motorist</button>
+                                    <button type="button" class="mx-2 mt-2 btn btn-warning">Car Owner</button>
+                                    <button type="button" class="mx-2 mt-2 btn btn-warning">Vip</button>
+                                    <button type="button" class="mx-2 mt-2 btn btn-warning">Regular</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+                            <div class="card-body p-5 ">
+
+                                <h3 class="mb-5">Sign in</h3>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="typeEmailX">Email</label>
+                                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label text-left" for="typePasswordX">Password</label>
+                                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+
+                                </div>
+
+                                <!-- Checkbox -->
+                                <div class="form-check d-flex justify-content-start mb-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                                    <label class="form-check-label" for="form1Example3"> Remember password </label>
+                                </div>
+
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+                                <hr class="my-4">
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="footer-04">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                            <h2 class="footer-heading"><a href="#" class="logo">Logo</a></h2>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                            <a href="#">read more <span class="ion-ios-arrow-round-forward"></span></a>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                            <h2 class="footer-heading">Menu</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="py-1 d-block">Home</a></li>
+                                <li><a href="#" class="py-1 d-block">Pre-Booking</a></li>
+                                <li><a href="#" class="py-1 d-block">About</a></li>
+                                <li><a href="#" class="py-1 d-block">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                            <h2 class="footer-heading">Tag cloud</h2>
+                            <div class="tagcloud">
+                                <a href="#" class="tag-cloud-link">Parking </a>
+                                <a href="#" class="tag-cloud-link">Cars</a>
+                                <a href="#" class="tag-cloud-link">Booking</a>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                            <h2 class="footer-heading">Subcribe</h2>
+                            <form action="#" class="subscribe-form">
+                                <div class="form-group d-flex">
+                                    <input type="text" class="form-control rounded-left" placeholder="Enter email address">
+                                    <button type="submit" class="form-control submit rounded-right"><span class="sr-only">Submit</span><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                            <h2 class="footer-heading mt-5">Follow us</h2>
+                            <ul class="ftco-footer-social p-0">
+                                <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span>twitter</a></li>
+                                <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span>Facebook</a></li>
+                                <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span>instagram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 mt-5 border-top py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-8">
+
+                                <p class="copyright">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script> All rights reserved | <i class="ion-ios-heart" aria-hidden="true"></i>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </p>
+                            </div>
+                            <div class="col-md-6 col-lg-4 text-md-right">
+                                <p class="mb-0 list-unstyled">
+                                    <a class="mr-md-3" href="#">Terms</a>
+                                    <a class="mr-md-3" href="#">Privacy</a>
+                                    <a class="mr-md-3" href="#">Compliances</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/popper.js"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/main.js"></script>
+
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registeration</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+
+</head>
+
+<body>
+    <section class="">
+        <div class="wrap">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <p class="mb-0 phone"><span class="fa fa-phone"></span> <a href="#">+254701104832</a></p>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <div class="social-media">
+                            <p class="mb-0 d-flex">
+                                <a href="#" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                    Register
+                  </button></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <a href="#" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">
+                    Login
+                  </button></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">LOGO <span>HERE</span></a>
+                <form action="#" class="searchform order-sm-start order-lg-last">
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control pl-3" placeholder="Search">
+                        <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                    </div>
+                </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                        <li class="nav-item "><a href="{% url 'prebooking' %}" class="nav-link">Pre-Booking</a></li>
+                        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About us</a></li>
+                        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Registeration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="m-4 float-center">
+                            <div class=" gap-4">
+                                <a class="text-dark" href="Registeration.html"><button type="button" class="mx-2 mt-2 btn btn-warning">Motorist</button></a>
+                                <a class="text-dark" href="Registeration.html"><button  type="button" class="mx-2 mt-2 btn btn-warning">Car Owner</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                        <div class="card-body p-5 ">
+
+                            <h3 class="mb-5">Sign in</h3>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="typeEmailX">Email</label>
+                                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label text-left" for="typePasswordX">Password</label>
+                                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div class="form-check d-flex justify-content-start mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                                <label class="form-check-label" for="form1Example3"> Remember password </label>
+                            </div>
+
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+                            <hr class="my-4">
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="registration-form">
+
+        <form method="post" action='{% url "handlesignup" %}'>
+            {% csrf_token %}
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-heading">
+                <h1>Registeration</h1>
+            </div>
+            <div class="form-group">
+                <input type="text" name="username" class="form-control item" id="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control item" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password1" class="form-control item" id="password1" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password2" class="form-control item" id="password2" placeholder="Confirm password" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">Create Account</button>
+            </div>
+        </form>
+
+    </div>
+
+    <footer class="footer-04">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                    <h2 class="footer-heading"><a href="#" class="logo">Logo</a></h2>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    <a href="#">read more <span class="ion-ios-arrow-round-forward"></span></a>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                    <h2 class="footer-heading">Menu</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="py-1 d-block">Home</a></li>
+                        <li><a href="#" class="py-1 d-block">Pre-Booking</a></li>
+                        <li><a href="#" class="py-1 d-block">About</a></li>
+                        <li><a href="#" class="py-1 d-block">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                    <h2 class="footer-heading">Tag cloud</h2>
+                    <div class="tagcloud">
+                        <a href="#" class="tag-cloud-link">Parking </a>
+                        <a href="#" class="tag-cloud-link">Cars</a>
+                        <a href="#" class="tag-cloud-link">Booking</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                    <h2 class="footer-heading">Subcribe</h2>
+                    <form action="#" class="subscribe-form">
+                        <div class="form-group d-flex">
+                            <input type="text" class="form-control rounded-left" placeholder="Enter email address">
+                            <button type="submit" class="form-control submit rounded-right"><span class="sr-only">Submit</span><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                    <h2 class="footer-heading mt-5">Follow us</h2>
+                    <ul class="ftco-footer-social p-0">
+                        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span>twitter</a></li>
+                        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span>Facebook</a></li>
+                        <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span>instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 mt-5 border-top py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-8">
+
+                        <p class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | <i class="ion-ios-heart" aria-hidden="true"></i>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-right">
+                        <p class="mb-0 list-unstyled">
+                            <a class="mr-md-3" href="#">Terms</a>
+                            <a class="mr-md-3" href="#">Privacy</a>
+                            <a class="mr-md-3" href="#">Compliances</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> -->
+    <script>
+        $(document).ready(function() {
+            $('#birth-date').mask('00/00/0000');
+            $('#phone-number').mask('0000-0000');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Car Parking Finder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <title>Car Parking Finder | Contact Us</title>
+
+    <!-- <link rel="stylesheet" href="css/style1.css"> -->
+
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <p class="mb-0 phone" style="margin-top: 15px;"><span class="fa fa-phone"></span> <a href="#">+254701104832</a></p>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <div class="social-media">
+                        <p class="mb-0 d-flex">
+                            {% if user.is_authenticated %}
+                            <a href="#" style="margin-top: 10px; margin-right: 5px; margin-bottom: 4px;" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark">
+                                Profile
+                                </button>
+                            </a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a href="{% url 'handlelogout' %}" style="margin-top: 10px; margin-right: 5px; margin-bottom: 4px;" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark">
+                                Logout
+                                </button>
+                            </a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {% else %}
+                            <a href="#" style="margin-top: 10px;" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter" >
+                                Register
+                                </button>
+                            </a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {% include 'login.html' %} {% endif %}
+                        </p>
+
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Registeration</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="m-4 float-left">
+                                    <div class=" gap-4">
+                                        <a class="text-dark" href='{% url "signup" %}'><button  type="button" class="mx-2 mt-2 btn btn-warning" style="width: 8.5em;">Car Park Owner</button></a>
+                                    </div>
+                                </div>
+                                <div class="m-4 float-center">
+                                    <div class=" gap-4">
+                                        <a class="text-dark" href='{% url "signup" %}'><button  type="button" class="mx-2 mt-2 btn btn-warning">Motorist</button></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light " id="ftco-navbar ">
+        <div class="container ">
+            <a class="navbar-brand " href="index.html ">LOGO <span>HERE</span></a>
+            <form action="# " class="searchform order-sm-start order-lg-last ">
+                <div class="form-group d-flex ">
+                    <input type="text " class="form-control pl-3 " placeholder="Search ">
+                    <button type="submit " placeholder=" " class="form-control search "><span class="fa fa-search "></span></button>
+                </div>
+            </form>
+            <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#ftco-nav " aria-controls="ftco-nav " aria-expanded="false " aria-label="Toggle navigation ">
+                <span class="fa fa-bars "></span> Menu
+            </button>
+            <div class="collapse navbar-collapse " id="ftco-nav ">
+                <ul class="navbar-nav m-auto ">
+                    <li class="nav-item "><a href="{% url 'home' %} " class="nav-link ">Home</a></li>
+                    <li class="nav-item "><a href="{% url 'prebooking' %} " class="nav-link ">Pre-Booking</a></li>
+                    <li class="nav-item "><a href="{% url 'about' %} " class="nav-link ">About us</a></li>
+                    <li class="nav-item "><a href="{% url 'contact' %} " class="nav-link ">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+    <div class="messages" id="alert-message">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+        </div>
+        {% endfor %}
+    </div>
+    {% block content %} {% endblock content %}
+
+    <footer class="footer-04 ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4 ">
+                    <h2 class="footer-heading "><a href="# " class="logo ">Logo</a></h2>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    <a href="# ">read more <span class="ion-ios-arrow-round-forward "></span></a>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4 ">
+                    <h2 class="footer-heading ">Menu</h2>
+                    <ul class="list-unstyled ">
+                        <li><a href="{% url 'home' %}" class="py-1 d-block ">Home</a></li>
+                        <li><a href="{% url 'prebooking' %} " class="py-1 d-block ">Pre-Booking</a></li>
+                        <li><a href="{% url 'about' %} " class="py-1 d-block ">About</a></li>
+                        <li><a href="{% url 'contact' %} " class="py-1 d-block ">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4 ">
+                    <h2 class="footer-heading ">Tag cloud</h2>
+                    <div class="tagcloud ">
+                        <a href="# " class="tag-cloud-link ">Parking </a>
+                        <a href="# " class="tag-cloud-link ">Cars</a>
+                        <a href="# " class="tag-cloud-link ">Booking</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4 ">
+                    <h2 class="footer-heading ">Subcribe</h2>
+                    <form action="# " class="subscribe-form ">
+                        <div class="form-group d-flex ">
+                            <input type="text " class="form-control rounded-left " placeholder="Enter email address ">
+                            <button type="submit " class="form-control submit rounded-right "><span class="sr-only ">Submit</span><i class="fa fa-search "></i></button>
+                        </div>
+                    </form>
+                    <h2 class="footer-heading mt-5 ">Follow us</h2>
+                    <ul class="ftco-footer-social p-0 ">
+                        <li class="ftco-animate "><a href="# " data-toggle="tooltip " data-placement="top " title="Twitter "><span class="ion-logo-twitter "></span>twitter</a></li>
+                        <li class="ftco-animate "><a href="# " data-toggle="tooltip " data-placement="top " title="Facebook "><span class="ion-logo-facebook "></span>Facebook</a></li>
+                        <li class="ftco-animate "><a href="# " data-toggle="tooltip " data-placement="top " title="Instagram "><span class="ion-logo-instagram "></span>instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 mt-5 border-top py-5 ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-6 col-lg-8 ">
+
+                        <p class="copyright ">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | <i class="ion-ios-heart " aria-hidden="true "></i>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 text-md-right ">
+                        <p class="mb-0 list-unstyled ">
+                            <a class="mr-md-3 " href="# ">Terms</a>
+                            <a class="mr-md-3 " href="# ">Privacy</a>
+                            <a class="mr-md-3 " href="# ">Compliances</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+    <script src="{% static 'js/jquery.min.js' %} "></script>
+    <script src="{% static 'js/popper.js' %} "></script>
+    <script src="{% static 'js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'js/main.js' %} "></script>
+</body>
+
+</html>

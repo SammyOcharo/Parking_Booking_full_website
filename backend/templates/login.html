@@ -1,0 +1,71 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Car Parking Finder | Contact Us</title>
+
+    <!-- <link rel="stylesheet" href="css/style1.css"> -->
+
+
+</head>
+
+<a href="#" style="margin-top: 10px;" class="d-flex align-items-center justify-content-center"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1" >
+    Login
+    </button>
+    </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="card-body p-5 ">
+
+                    <h3 class="mb-5">Sign in</h3>
+                    <form method="post" action='{% url "handlelogin" %}'>
+                        {% csrf_token %}
+                        <div class="form-outline mb-4">
+
+                            <label class="form-label" for="typeEmailX">Username</label>
+                            <input type="text" id="typeEmailX" name="username" class="form-control form-control-lg" />
+
+
+                        </div>
+
+                        <div class="form-outline mb-4">
+
+                            <label class="form-label text-left" for="typePasswordX">Password</label>
+                            <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" />
+
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="form-check d-flex justify-content-start mb-4">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                            <label class="form-check-label" for="form1Example3"> Remember password </label>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                    </form>
+                    <hr class="my-4">
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

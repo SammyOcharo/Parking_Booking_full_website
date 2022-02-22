@@ -1,0 +1,139 @@
+{% extends 'index.html' %}{% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Car Parking Finder | Book Space</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <!-- / -->
+
+
+
+</head>
+<div id="booking" class="section">
+    <div class="section-center">
+        {% if user.is_authenticated %}
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <h4 class="text-center text-warning">Pre-Book a car Park</h4>
+                    <form action="/new-booking/" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <span class="form-label">Name</span>
+                                    <input class="form-control" type="text" placeholder="Enter your name" name="name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <span class="form-label">Email</span>
+                                    <input class="form-control" type="email" placeholder="Enter your email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label">Phone</span>
+                            <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label"> Location</span>
+                            <input class="form-control" type="text" placeholder="Enter Location" name="location">
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label">Parking slot</span>
+                            <input class="form-control" type="text" placeholder="Enter Parking Slot" name="parking_slot">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <span class="form-label">Parking Date</span>
+                                    <input class="form-control" type="date" name="parking_date" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Hour</span>
+                                            <select class="form-control">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+													<option>7</option>
+													<option>8</option>
+													<option>9</option>
+													<option>10</option>
+													<option>11</option>
+													<option>12</option>
+												</select>
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Min</span>
+                                            <select class="form-control">
+													<option>05</option>
+													<option>10</option>
+													<option>15</option>
+													<option>20</option>
+													<option>25</option>
+													<option>30</option>
+													<option>35</option>
+													<option>40</option>
+													<option>45</option>
+													<option>50</option>
+													<option>55</option>
+												</select>
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">AM/PM</span>
+                                            <select class="form-control">
+													<option>AM</option>
+													<option>PM</option>
+												</select>
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-btn ">
+                            <button type="submit" class="submit-btn" value="payment">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <p>
+            <h4 style="text-align: center;">Please login to access parking slot</h4>
+        </p>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,116 @@
+{% extends 'index.html' %} {% load static %} {% block content %}
+
+<section class="">
+    <div class="mt-0 bg-dark">
+        <br>
+        <h2 class="heading text-center text-white ">ABOUT US</h2><br>
+        <br>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div style="background-image: url('backend/media/about1.jpg'); height: 550px; background-size: cover; background-repeat: no-repeat;" class="col-6">
+
+            </div>
+            <div class="col-6">
+                <h1>
+                    <A>ABOUT US</A>
+                </h1>
+                <p>We’re passionate about parking services. As Kenya number one car park operator we have helped millions of customers to find solutions that are right for them. We’ve been able to do this because: We have more car parks than anyone else,
+                    so there’s more freedom of choice - over 1,000 spaces in over 50 counties Our colleagues are professional and helpful. They really care about delivering great customer service Our car parks are linked to our email for a faster response
+                    time once you go to the contact us page We Guarantee Quality service at all times.</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container mt-5 bg-dark">
+        <div class="row">
+
+            <div class="col-6">
+                <h1 class="text-white mt-5">
+                    <A>Why Choose us ?</A>
+                </h1>
+                <p class="text-white">Car parking systems may be traditional or automated. Automatic multi-storey automated car park systems are less expensive per parking slot, since they tend to require less building volume and less ground area than a conventional facility
+                    with the same capacity. In the long term, automated car parking systems are likely to be more cost effective than traditional parking garages.</p>
+            </div>
+            <div style="background-image: url('backend/media/about.jpg'); height: 400px; background-size: cover; background-repeat: no-repeat; " class="col-6">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Registeration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="m-4 float-center">
+                        <div class=" gap-4">
+                            <a class="text-dark" href="Registeration.html"><button type="button" class="mx-2 mt-2 btn btn-warning">Motorist</button></a>
+                            <a class="text-dark" href="Registeration.html"><button  type="button" class="mx-2 mt-2 btn btn-warning">Car Owner</button></a>
+                            <a class="text-dark" href="Registeration.html"><button type="button" class="mx-2 mt-2 btn btn-warning">Vip</button></a>
+                            <a class="text-dark" href="Registeration.html"><button type="button" class="mx-2 mt-2 btn btn-warning">Regular</button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+                    <div class="card-body p-5 ">
+
+                        <h3 class="mb-5">Sign in</h3>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="typeEmailX">Email</label>
+                            <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label text-left" for="typePasswordX">Password</label>
+                            <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="form-check d-flex justify-content-start mb-4">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                            <label class="form-check-label" for="form1Example3"> Remember password </label>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+                        <hr class="my-4">
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
